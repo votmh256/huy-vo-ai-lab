@@ -1,26 +1,25 @@
-# NYC Taxi Operations Analysis (EDA)
+# Huy Vo · AI Lab
 
-**Domain:** mobility operations · **Type:** exploratory data analysis · **Stack:** pandas, GeoPandas, Matplotlib, Seaborn
+Hands-on machine learning work from my **MSc in Machine Learning & AI** (Liverpool John Moores University, via upGrad), alongside my day job as a Product Owner for an enterprise platform in banking.
 
-[View notebook](nyc_taxi_eda.ipynb) · [Open in nbviewer](https://nbviewer.org/github/votmh256/huy-vo-ai-lab/blob/main/04-nyc-taxi-eda/nyc_taxi_eda.ipynb)
+I build these to understand what it takes to make AI work in practice: data quality, model trade-offs, evaluation and the decisions a product team has to make before a model reaches users.
 
-## Problem
-Use the 2023 NYC yellow taxi trip records to find patterns in demand, fares, tips and pickup zones that could improve operational efficiency, revenue and passenger experience.
+## Projects
 
-## Data
-[NYC TLC trip records](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) for 2023 (12 monthly parquet files, tens of millions of trips) plus the NYC taxi zone shapefile (263 zones).
+| # | Project | Domain | Techniques | Headline result |
+|---|---|---|---|---|
+| 01 | [Steel surface defect classification](01-steel-defect-classification) | Manufacturing QA · computer vision | Transfer learning (MobileNetV2), PyTorch | **97.2%** validation accuracy across 6 defect types |
+| 02 | [Cardiovascular risk classification](02-cardio-risk-classification) | Healthcare triage | Linear SVM, decision tree, GridSearchCV, threshold tuning | Recall lifted **68% → 80%** at a 0.4 threshold |
+| 03 | [Used-car price regression](03-car-price-regression) | Marketplace pricing | Feature engineering, Ridge & Lasso regularisation | **R² 0.93** on held-out data |
+| 04 | [NYC taxi operations analysis](04-nyc-taxi-eda) | Mobility operations | Stratified sampling, EDA, geospatial analysis | 303K-trip sample across 12 months and 263 zones |
 
-## Approach
-- **Stratified sampling:** kept a random 0.8% of trips from every hour of every day across all 12 months, giving **303K trips** that preserve hourly, daily and monthly patterns.
-- **Cleaning:** fixed and combined columns (e.g. merged the two airport-fee fields), handled missing values (about 3.4% in several fields) and treated outliers caused by errors in how trips were recorded.
-- **Analysis:** temporal (hour, day, month), financial (revenue, fare vs distance and duration, tips, payment types, fare per mile by vendor and distance tier), geographical (choropleth of pickups by zone, top pickup and drop-off zones) and customer factors (passenger counts, surcharges).
+Each folder has a short write-up (problem, approach, results, what I'd do in production) and the full notebook with outputs.
 
-## Highlights
-- **JFK Airport** is the single busiest pickup zone, followed by Upper East Side South and Midtown Center.
-- Weekday demand peaks in the **late afternoon and early evening (around 17:00–18:00)**, while weekend demand is flatter.
+## Stack
 
-![Pickups by zone](images/pickups_by_zone_map.png)
-![Weekday vs weekend hourly traffic](images/weekday_vs_weekend_hourly.png)
+Python · PyTorch / torchvision · scikit-learn · statsmodels · pandas · NumPy · GeoPandas · Matplotlib / Seaborn · Jupyter / Google Colab
 
-## Recommendations
-[To be added]
+## About me
+
+Product Owner / Product Manager based in Ho Chi Minh City, working on enterprise workflow, low-code and AI-enabled platforms in regulated industries.
+[LinkedIn](https://www.linkedin.com/in/huy-vo-950361132)
