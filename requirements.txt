@@ -8,3 +8,12 @@ geopandas
 pyarrow
 torch
 torchvision
+langchain
+langchain-community
+langchain-chroma
+langchain-google-genai
+sentence-transformers
+nltk
+ragas
+datasets
+google-genai
